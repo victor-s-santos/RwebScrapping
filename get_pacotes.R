@@ -5,7 +5,7 @@
 #---------------------------------------------------------------------#
 #loop para poder baixar todos os pacotes num intervalo de tempo que não dê problema
 i = 0
-meus_pacotes <- readLines("pacotes.txt")
+meus_pacotes <- readLines("links.txt")
 for(links in meus_pacotes){
   for(a in links){
     if(i == 10){
