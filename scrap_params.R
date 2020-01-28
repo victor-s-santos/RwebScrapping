@@ -2,7 +2,7 @@
 library(rvest)
 library(dplyr)
 library(stringr)
-otimizado <- function(argumento){
+scrap_function <- function(argumento){
   report <- xml2::read_html(argumento) %>%
     rvest::html_nodes("table") %>%
     rvest::html_nodes("tr") %>%
@@ -21,14 +21,12 @@ otimizado <- function(argumento){
       }))
       if(sum(grepl(marks[[4]][1], object, fixed = TRUE)) > 0 ){
         object <- gsub(marks[[3]][1], "", object)
-        #print(object)
         
       }
       if("" != object[1]) {
         nome <- data.table::last(stringr::str_split(argumento,pattern = "/")[[1]])
         nome <- gsub(".html", "", nome)
         data1 <- rbind(data1, data.frame(to = (object), from = rep(nome, length(object)), source = rep(gsub("\n\t", "",marks[[j]][k]), length(object)), stringsAsFactors = FALSE))
-        #print(data1)#agora
       }
     }
     if(j == 2){
@@ -37,9 +35,9 @@ otimizado <- function(argumento){
   
 }
 
-otimizado("http://bioconductor.org/packages/release/bioc/html/zlibbioc.html")
+scrap_function("http://bioconductor.org/packages/release/bioc/html/zlibbioc.html")
 
 #testando pra arquivo
 meus_pacotes <- readLines("links.txt")
-otimizado(meus_pacotes[[2]])
+scrap_function(meus_pacotes[[2]])
 meus_pacotes[[1]]#this link is broken
