@@ -1,4 +1,4 @@
-meus_pacotes <- readLines("links.txt")
+meus_pacotes <- readLines("links2.txt")
 i = 0
 for(links in meus_pacotes){
   for(a in links){

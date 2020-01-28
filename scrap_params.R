@@ -38,6 +38,6 @@ scrap_function <- function(argumento){
 scrap_function("http://bioconductor.org/packages/release/bioc/html/zlibbioc.html")
 
 #testando pra arquivo
-meus_pacotes <- readLines("links.txt")
-scrap_function(meus_pacotes[[2]])
-meus_pacotes[[1]]#this link is broken
+meus_pacotes <- readLines("links2.txt")
+scrap_function(meus_pacotes[[1]])
+meus_pacotes[[1]]
