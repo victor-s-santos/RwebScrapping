@@ -3,7 +3,7 @@ library(httr)
 
 url <- 'links2.html'
 webpage <- read_html(url)
-webpage <- html_nodes(webpage, '.dataTable')
+webpage <- html_nodes(webpage, 'table')
 webpage <- html_nodes(webpage, 'a')
 webpage <- html_attr(webpage, "href")
 webpage
