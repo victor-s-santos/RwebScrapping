@@ -18,7 +18,7 @@ for(links in meus_pacotes){
   }
   }
 #-----------------------------------------------------------------------#
-#gerar o nome dos pacotes, que entrará no parâmetro destfile -> Funcionando!!
+#gerar o nome dos pacotes, que entrará no parâmetro destfile
 b <- "https://www.bioconductor.org/packages/release/bioc/html/MTseeker.html"
 a <- gsub("https://www.bioconductor.org/packages/release/bioc/html/", "", b)
 download.file((b), (a))

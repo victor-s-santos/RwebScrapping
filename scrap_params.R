@@ -38,3 +38,8 @@ otimizado <- function(argumento){
 }
 
 otimizado("http://bioconductor.org/packages/release/bioc/html/zlibbioc.html")
+
+#testando pra arquivo
+meus_pacotes <- readLines("links.txt")
+otimizado(meus_pacotes[[2]])
+meus_pacotes[[1]]#this link is broken
