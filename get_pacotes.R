@@ -1,25 +1,18 @@
-#função para fazer download dos pacotes
-
-#link <- "teste"
-#download.file("https://www.math.ucla.edu/~anderson/rw1001/library/base/html/download.file.html", "teste")
-#---------------------------------------------------------------------#
-#loop para poder baixar todos os pacotes num intervalo de tempo que não dê problema
-i = 0
 meus_pacotes <- readLines("links.txt")
+i = 0
 for(links in meus_pacotes){
   for(a in links){
     if(i == 10){
-      Sys.sleep(10)
+      Sys.sleep(3)
       i = 0
-      print(a)
+      
+      download.file(a, destfile="site.html",method="libcurl")
+    }else{
+      download.file(a, destfile="site.html",method="libcurl")
+      i = i + 1 
     }
-    print(a)
-    i = i + 1
   }
-  }
-#-----------------------------------------------------------------------#
-#gerar o nome dos pacotes, que entrará no parâmetro destfile
-b <- "https://www.bioconductor.org/packages/release/bioc/html/MTseeker.html"
-a <- gsub("https://www.bioconductor.org/packages/release/bioc/html/", "", b)
-download.file((b), (a))
-#getwd()
+}
+
+download.file(meus_pacotes[4], destfile='./site.html',method="libcurl")
+#I must think about a way to concatenate the pacage name from the website with the current location
