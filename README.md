@@ -12,10 +12,14 @@
 
 * ## Explaing the workflow:
 
-  * ***extrai_links.R:*** `This R script gets all links from the page links.html located in the same directory, and write a table containing these links.`
+  * ***extrai_links.R:*** `This R script gets all links from the page links2.html located in the same directory, and write a table containing these links and exports this as a file.txt.`
   
   * ***get_pacotes.R:*** `This is a way to do GET using R, but I thought the best way is do it from bash. In therefore, this script only print each link from links.txt` 
 
   * ***download_packages.sh:*** `The which I really did a GET from each contained link in links.txt. I needed the sleep function to create a delay between many GETs that I did, because the bioconductor could block my ip, since the code was doing GET too many times.`
+  
+  * ***scrap_params.R:*** `The script where I can do webscrap of the package params, returning this as a data.frame.`
+  
+  * ***unique_dataframe.R:*** `The script where I run the scrap_function in each package link in the links2.txt, and returns this as a single dataframe.`
  
-  * ***OBS:*** `It isn't necessary to have the pages in your local machine, I mean, I could did it scraping directly from the page links without download the pages, but as I was trying many different ways to scrap the informations, I thought GET these pages would be a good idea to avoid problems with the bioconductor security system`
+  * ***OBS:*** `It isn't necessary to have the pages in your local machine, I mean, I could did it scraping directly from the page links without download the pages, but as I was trying many different ways to scrap the informations, I thought GET these pages would be a good idea to avoid problems with the bioconductor security system. I am exporting some of this functions  as a lib as soon as possible, because in this way it is possible to avoid to write the function in every step.`
