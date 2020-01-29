@@ -2,7 +2,7 @@ library(rvest)
 library(httr)
 
 url <- 'links2.html'
-webpage <- read_html(url)
+webpage <- read_html(url) %>%
 webpage <- html_nodes(webpage, '#PageContent')
 webpage <- html_nodes(webpage, 'table')
 webpage <- html_nodes(webpage, 'a')
