@@ -1,6 +1,6 @@
 #!/bin/bash
 N=0
-input="links.txt"
+input="links2.txt"
 while IFS= read -r line
 do
   wget "$line"
