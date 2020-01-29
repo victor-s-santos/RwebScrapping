@@ -40,11 +40,11 @@ meus_pacotes <- readLines("links2.txt")
 #this way, i can have a list with every created dataframes by the scrap_function
 #there are many link broken packages, therefore maybe is a good idea to scrap the links from the website.
 #in this list, I am receiving the linkage, I don't care about the params, only the amount of linkages
-newlist3 <- list()
+newlist2 <- list()
 for(i in 1:length(meus_pacotes)){
-  newlist3[[i]] <- try(scrap_function(meus_pacotes[i]))
+  newlist2[[i]] <- try(scrap_function(meus_pacotes[i]))
   print(paste(meus_pacotes[i],"Success"))
-  if(inherits(newlist3[[i]], "Anything")){
+  if(inherits(newlist2[[i]], "Anything")){
     next
     #I need to find a way to get the packages with connection problems
   }
