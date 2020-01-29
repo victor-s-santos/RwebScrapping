@@ -42,8 +42,12 @@ meus_pacotes <- readLines("links2.txt")
 #in this list, I am receiving the linkage, I don't care about the params, only the amount of linkages
 newlist2 <- list()
 for(i in 1:length(meus_pacotes)){
-  newlist2[[i]] <- scrap_function(meus_pacotes[i])
+  newlist2[[i]] <- try(scrap_function(meus_pacotes[i]))
   print(paste(meus_pacotes[i],"Success"))
+  if(inherits(newlist2[[i]], "Error in package!")){
+    print(paste(meus_pacotes[i], "Erro nesse cara!"))
+    next
+  }
 }
 length(newlist2)
 
