@@ -51,3 +51,4 @@ for(i in 1:length(meus_pacotes)){
 }
 length(newlist2)
 
+#the list has 1823 elements and it is fine because the reported number of packages in the bioconductor website is 1823
