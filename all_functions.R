@@ -14,8 +14,8 @@ scrap_function <- function(argumento){
   
   data1 <- data.frame(to = character(), from = character(), source = character(), stringsAsFactors = FALSE)
   
-  for(j in 1:2){ # um for sobre os elementos 1 e 2 em marks
-    for(k in 1:length(marks[[j]])){ # for do tamano de cada marks
+  for(j in 1:2){ 
+    for(k in 1:length(marks[[j]])){ 
       object <-gsub(marks[[j]][k], " ", report[grepl(report, pattern = marks[[j]][k])])  
       object <- unlist(lapply(strsplit(object,","), FUN = function(x){
         str_trim(x, side = "both")
