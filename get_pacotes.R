@@ -1,20 +1,18 @@
 meus_pacotes <- readLines("links2.txt")
 download_packages <- function(linksfile){
-  for(links in meus_pacotes){
-    for(a in links){
-      if(i == 10){
-        link <- gsub("https://www.bioconductor.org/packages/release/bioc/html/", "" ,a)
-        Sys.sleep(3)
-        i = 0
-        
-        download.file(a, destfile=link,method="libcurl")
-      }else{
-        download.file(a, destfile=link,method="libcurl")
-        i = i + 1 
-      }
+  i <- 0
+  for(link in linksfile){
+    if(i == 10){
+      t <- runif(1, 1.0, 4.0)
+      Sys.sleep(t)
+      link2 <- gsub("https://www.bioconductor.org/packages/release/bioc/html/", "" ,link)
+      download.file(link, destfile=paste('./pages/', link2), method="libcurl")
+      i <- i + 1
+    }else{
+      i <- i + 1
+      link2 <- gsub("https://www.bioconductor.org/packages/release/bioc/html/", "" ,link)
+      download.file(link, paste('./pages/', link2), method="libcurl")
     }
   }
 }
-download_packages(meus_pacotes)
-#download.file(meus_pacotes[4], destfile='./site.html',method="libcurl")
-#I must think about a way to concatenate the pacage name from the website with the current location
+download_packages(meus_pacotes[1:20])
