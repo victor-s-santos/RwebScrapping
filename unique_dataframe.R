@@ -9,3 +9,4 @@ for(i in 1:length(meus_pacotes)){
   }
 }
 length(newlist2)
+save(data1, file = "list_of_all_df.RData")
