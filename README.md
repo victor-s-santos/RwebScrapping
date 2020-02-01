@@ -25,3 +25,15 @@
   * ***all_functions.R:*** `The script where I share every function, every other R files are only reusing the function contained here.`
  
   * ***OBS:*** `It isn't necessary to have the pages in your local machine, I mean, I could did it scraping directly from the page links without download the pages, but as I was trying many different ways to scrap the informations, I thought GET these pages would be a good idea to avoid problems with the bioconductor security system.`
+  
+* ## Step-by-Step:
+ 
+ * ***Extract links from bioconductor release version: *** `Using the extrai_links.R script to extract package links from bioconductor release version.`
+ 
+ * ***Getting a data_frame by each package page: *** `Using obtained links in the previous step or even the download packages pages, the scrap_params.R's function to get a data_frame by each package page.`
+ 
+ * ***Obtaining a variable with data_frames: *** `In the unique_dataframe.R script is obtained a list with all data_frames, and this variable is exported as a .RData file.`
+ 
+ 
+  
+  
