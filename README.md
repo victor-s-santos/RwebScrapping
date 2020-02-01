@@ -28,11 +28,11 @@
   
 * ## Step-by-Step:
  
- * ***Extract links from bioconductor release version: *** `Using the extrai_links.R script to extract package links from bioconductor release version.`
- 
- * ***Getting a data_frame by each package page: *** `Using obtained links in the previous step or even the download packages pages, the scrap_params.R's function to get a data_frame by each package page.`
- 
- * ***Obtaining a variable with data_frames: *** `In the unique_dataframe.R script is obtained a list with all data_frames, and this variable is exported as a .RData file.`
+  * ***Extract links from bioconductor release version:*** `Using the extrai_links.R script to extract package links from bioconductor release version.`
+
+  * ***Getting a data_frame by each package page:*** `Using obtained links in the previous step or even the download packages pages, the scrap_params.R's function to get a data_frame by each package page.`
+
+  * ***Obtaining a variable with data_frames:*** `In the unique_dataframe.R script is obtained a list with all data_frames, and this variable is exported as a .RData file.`
  
  
   
