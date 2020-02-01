@@ -46,5 +46,22 @@ extract_links <- function(links_html){
   return(write.table(webpage,  "links2.txt", append = FALSE, quote = FALSE, sep = " ", eol = "\n", na = "NA", dec = ".", row.names = FALSE, col.names = FALSE, qmethod = c("escape", "double")))
 }
 
+download_packages <- function(linksfile){
+  i <- 0
+  for(link in linksfile){
+    if(i == 10){
+      t <- runif(1, 1.0, 4.0)
+      Sys.sleep(t)
+      link2 <- gsub("https://www.bioconductor.org/packages/release/bioc/html/", "" ,link)
+      download.file(link, destfile=paste('./pages/', link2), method="libcurl")
+      i <- i + 1
+    }else{
+      i <- i + 1
+      link2 <- gsub("https://www.bioconductor.org/packages/release/bioc/html/", "" ,link)
+      download.file(link, paste('./pages/', link2), method="libcurl")
+    }
+  }
+}
+
 
 
