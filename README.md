@@ -32,8 +32,9 @@
 
   * ***Getting a data_frame by each package page:*** `Using obtained links in the previous step or even the download packages pages, the scrap_params.R's function to get a data_frame by each package page.`
 
-  * ***Obtaining a variable with data_frames:*** `In the unique_dataframe.R script is obtained a list with all data_frames, and this variable is exported as a .RData file.`
+  * ***Obtaining a list of all data_frames:*** `In the unique_dataframe.R script is obtained a list with all data_frames, and this variable is exported as a .RData file.`
  
+  * ***Obtaining a unique data_frame:*** `The file named unique_df.RData is a dataframe of every package params. This file is going to be used in the next repository.`
  
   
   
